@@ -18,11 +18,13 @@ public class Uppercase {
         }
 
         try {
+
             final Job job = Job.getInstance(new Configuration());
             job.setJarByClass(Uppercase.class);
             job.setJobName("Uppercase");
             FileInputFormat.addInputPath(job, new Path(args[0]));
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
+            job.setNumReduceTasks(2);
             job.setMapperClass(UppercaseMapper.class);
             job.setReducerClass(UppercaseReducer.class);
             job.setPartitionerClass(MyPartitioner.class);
