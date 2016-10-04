@@ -1,0 +1,1 @@
+docker run -it -v /c/github/ma-120:/root/ma-120 naimdjon/hadoop
