@@ -1,0 +1,5 @@
+HadoopCustomReader.class
+XmlRecordReader.class
+XmlInputFormat.class
+HadoopCustomReader$Map.class
+HadoopCustomReader$Reduce2.class
