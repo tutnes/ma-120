@@ -4,14 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10d4b5ea-5ea2-4591-b282-12852eb8e0de" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../hadoop.bat" afterPath="$PROJECT_DIR$/../hadoop.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lecture02/hadoop-word-count/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../lecture02/hadoop-word-count/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lecture03/hadoop-uppercase/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../lecture03/hadoop-uppercase/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lecture03/hadoop-uppercase/src/main/java/hadoop_uppercase/Uppercase.java" afterPath="$PROJECT_DIR$/../lecture03/hadoop-uppercase/src/main/java/hadoop_uppercase/Uppercase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../lecture03_02/hadoop-uppercase/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../lecture03_02/hadoop-uppercase/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="10d4b5ea-5ea2-4591-b282-12852eb8e0de" name="Default" comment="" />
     <ignored path="hadoop-custom_recordreader.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,8 +38,8 @@
       <file leaf-file-name="XmlInputFormat.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/XmlInputFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            <state relative-caret-position="153">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -612,12 +605,12 @@
       <workItem from="1476185001409" duration="309000" />
       <workItem from="1476185752683" duration="6980000" />
       <workItem from="1477084303779" duration="51000" />
-      <workItem from="1477084431165" duration="316000" />
+      <workItem from="1477084431165" duration="1006000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7656000" />
+    <option name="totallyTimeSpent" value="8346000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1596" height="867" extended-state="0" />
@@ -761,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/XmlInputFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        <state relative-caret-position="153">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
         </state>
       </provider>
