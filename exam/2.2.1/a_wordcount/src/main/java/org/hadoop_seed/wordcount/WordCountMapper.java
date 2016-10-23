@@ -16,11 +16,12 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         //Should
-        final String line = value.toString();
-        final StringTokenizer tokenizer = new StringTokenizer(line);
-        while (tokenizer.hasMoreElements()) {
-            word.set(tokenizer.nextToken());
-            context.write(word, UNO);
-        }
+        //final String line = value.toString();
+        //final StringTokenizer tokenizer = new StringTokenizer(line);
+        //while (tokenizer.hasMoreElements()) {
+          //  word.set(tokenizer.nextToken());
+//            context.write(word, UNO);
+  //      }
+        context.write(value, UNO);
     }
 }

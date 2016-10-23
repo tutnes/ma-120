@@ -25,10 +25,8 @@ public class XmlRecordReader extends RecordReader<LongWritable, Text> {
 
     public XmlRecordReader() {
         try {
-            //this.tagName = ("<student ").getBytes("UTF-8");
-            //this.tagNameEnd = ("</student>").getBytes("UTF-8");
-            this.tagName = ("<student ").getBytes("UTF-8");
-            this.tagNameEnd = ("</student>").getBytes("UTF-8");
+            this.tagName = ("<row ").getBytes("UTF-8");
+            this.tagNameEnd = (" />").getBytes("UTF-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
@@ -36,10 +34,10 @@ public class XmlRecordReader extends RecordReader<LongWritable, Text> {
 
     @Override
     public void initialize(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
-        FileSplit filesplit = (FileSplit) split;
+        final FileSplit filesplit = (FileSplit) split;
         start = filesplit.getStart();
         end = start + filesplit.getLength();
-        FileSystem fs = filesplit.getPath().getFileSystem(context.getConfiguration());
+        final FileSystem fs = filesplit.getPath().getFileSystem(context.getConfiguration());
         inputStream = fs.open(filesplit.getPath());
         inputStream.seek(start);
     }
@@ -57,8 +55,8 @@ public class XmlRecordReader extends RecordReader<LongWritable, Text> {
 
     @Override
     public float getProgress() throws IOException, InterruptedException {
-        //TODO
-        return 0.0f;
+        final long total = end - start;
+        return (inputStream.getPos() - start) / total;
     }
 
     @Override
@@ -68,7 +66,9 @@ public class XmlRecordReader extends RecordReader<LongWritable, Text> {
                 try {
                     buffer.write(tagName);
                     if (readUntilMatch(tagNameEnd, true)) {
-                        //TODO
+                        currentKey = new LongWritable(inputStream.getPos());
+                        currentValue = new Text();
+                        currentValue.set(buffer.getData(), 0, buffer.getLength());
                         return true;
                     }
                 } finally {
@@ -105,6 +105,6 @@ public class XmlRecordReader extends RecordReader<LongWritable, Text> {
 
     @Override
     public void close() throws IOException {
-        //TODO
+        inputStream.close();
     }
 }
