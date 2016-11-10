@@ -25,8 +25,8 @@ public class XmlRecordReader extends RecordReader<LongWritable, Text> {
 
     public XmlRecordReader() {
         try {
-            this.tagName = ("<row ").getBytes("UTF-8");
-            this.tagNameEnd = (" />").getBytes("UTF-8");
+            this.tagName = ("ody=\"").getBytes("UTF-8");
+            this.tagNameEnd = ("\"").getBytes("UTF-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
