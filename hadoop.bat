@@ -1,1 +1,1 @@
-docker run -it -v /C/github/ma-120/excersise07:/root/ma-120 naimdjon/hadoop
+docker run -it -v /C/github/ma-120/exam:/root/ma-120 naimdjon/hadoop
