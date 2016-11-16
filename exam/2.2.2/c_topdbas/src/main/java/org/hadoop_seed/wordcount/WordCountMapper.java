@@ -1,10 +1,10 @@
 package org.hadoop_seed.wordcount;
 
-import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.LongWritable;
-import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Mapper;
 
+import java.io.DataInput;
+import java.io.DataOutput;
 import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class WordCountMapper extends Mapper<LongWritable, Text, ComKey, NullWritable> {
     //private final static IntWritable UNO = new IntWritable(1);
     private final Text word = new Text();
     //private TreeMap<Integer, Text> topusers = new TreeMap<Integer, Text>();
@@ -35,10 +35,14 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
             if (matcher2.find()) {
                 reputation = Integer.parseInt(matcher2.group(1));
             }
-        context.write(new Text(output), new IntWritable(reputation));
+
+
+        context.write(new ComKey(output, reputation), NullWritable.get());
         }
 
     }
+
+
 
 }
 
