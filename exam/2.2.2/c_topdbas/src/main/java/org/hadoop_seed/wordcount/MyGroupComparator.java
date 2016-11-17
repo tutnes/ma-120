@@ -13,8 +13,6 @@ public class MyGroupComparator extends WritableComparator {
     public int compare(WritableComparable w1, WritableComparable w2) {
         ComKey key1 = (ComKey) w1;
         ComKey key2 = (ComKey) w2;
-        //return key1.getuserName().compareTo(key2.getuserName());
-        //return key1.getreputation().compareTo(key2.getreputation());
         if (key1.getreputation() < key2.getreputation()) {
             return -1;
         }

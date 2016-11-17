@@ -31,6 +31,7 @@ public class WordCounter {
             job.setOutputKeyClass(ComKey.class);
             job.setPartitionerClass(MyPartitioner.class);
             job.setOutputValueClass(NullWritable.class);
+            
             System.exit(job.waitForCompletion(true) ? 0 : 1);
         } catch (Exception e) {
             e.printStackTrace();
