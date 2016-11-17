@@ -1,0 +1,9 @@
+org/hadoop_seed/wordcount/MyPartitioner.class
+org/hadoop_seed/wordcount/WordCountReducer.class
+org/hadoop_seed/wordcount/MyGroupComparator.class
+org/hadoop_seed/wordcount/WordCounter.class
+org/hadoop_seed/wordcount/XmlInputFormat.class
+org/hadoop_seed/wordcount/MyKeySortComparator.class
+org/hadoop_seed/wordcount/WordCountMapper.class
+org/hadoop_seed/wordcount/ComKey.class
+org/hadoop_seed/wordcount/XmlRecordReader.class

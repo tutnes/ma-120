@@ -24,7 +24,7 @@ public class WordCountMapper extends Mapper<LongWritable, Text, ComKey, NullWrit
             int reputation = 0;
 
             Pattern pattern = Pattern.compile("ody=\"(.*?)\""); //Extracts whats within Body tag
-            Pattern pattern2 = Pattern.compile("Score=\"(.*?)\""); //Extracts whats within reputation tag
+            Pattern pattern2 = Pattern.compile("FavoriteCount=\"(.*?)\""); //Extracts whats within reputation tag
             Matcher matcher = pattern.matcher(output);
             Matcher matcher2 = pattern2.matcher(output);
             if (matcher.find()) {

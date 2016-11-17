@@ -1,0 +1,9 @@
+/root/ma-120/2.2.2/e_favouritequestions/src/main/java/org/hadoop_seed/wordcount/MyGroupComparator.java
+/root/ma-120/2.2.2/e_favouritequestions/src/main/java/org/hadoop_seed/wordcount/XmlRecordReader.java
+/root/ma-120/2.2.2/e_favouritequestions/src/main/java/org/hadoop_seed/wordcount/MyKeySortComparator.java
+/root/ma-120/2.2.2/e_favouritequestions/src/main/java/org/hadoop_seed/wordcount/WordCountMapper.java
+/root/ma-120/2.2.2/e_favouritequestions/src/main/java/org/hadoop_seed/wordcount/WordCountReducer.java
+/root/ma-120/2.2.2/e_favouritequestions/src/main/java/org/hadoop_seed/wordcount/ComKey.java
+/root/ma-120/2.2.2/e_favouritequestions/src/main/java/org/hadoop_seed/wordcount/MyPartitioner.java
+/root/ma-120/2.2.2/e_favouritequestions/src/main/java/org/hadoop_seed/wordcount/WordCounter.java
+/root/ma-120/2.2.2/e_favouritequestions/src/main/java/org/hadoop_seed/wordcount/XmlInputFormat.java
