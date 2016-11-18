@@ -1,0 +1,5 @@
+/root/ma-120/2.2.2/h_topnames_2/src/main/java/org/hadoop_seed/wordcount/WordCountMapper.java
+/root/ma-120/2.2.2/h_topnames_2/src/main/java/org/hadoop_seed/wordcount/WordCounter.java
+/root/ma-120/2.2.2/h_topnames_2/src/main/java/org/hadoop_seed/wordcount/XmlInputFormat.java
+/root/ma-120/2.2.2/h_topnames_2/src/main/java/org/hadoop_seed/wordcount/WordCountReducer.java
+/root/ma-120/2.2.2/h_topnames_2/src/main/java/org/hadoop_seed/wordcount/XmlRecordReader.java

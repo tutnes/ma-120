@@ -16,34 +16,39 @@ import java.util.TreeMap;
 
 
 public class WordCountReducer extends Reducer<ComKey,IntWritable,ComKey,IntWritable> {
-    String userName;
+    ComKey userName = new ComKey();
     int counter = 0;
     int sum = 0;
+
     //ArrayList
     //TreeMap tmp = new TreeMap();
-    protected void reduce(Iterable<ComKey> output, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+    //protected void reduce(ComKey output, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+    protected void reduce(ComKey output, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
 
-        //for (IntWritable value : values) {
-        for (ComKey value : output) {
+        userName = output;
+        for (IntWritable value : values) {
+            //for (ComKey value : output) {
             //tmp.put()
-            sum = sum + value.getreputation();
+            sum = sum + value.get();
             //context.write(new ComKey(value.getuserName(),value.getreputation()), new IntWritable(value.getreputation()));
             //context.write(new ComKey(output.getuserName(),1), new IntWritable(1));
-            System.out.println(value.getuserName() + value.getreputation());        //counter++;
-            }
-        //userName = output.getuserName();
 
+
+            //System.out.println(output.getuserName()+ " " + value.get());        //counter++;
         }
 
 
+    }
+    //context.write(new ComKey(userName,sum), new IntWritable(sum));
+
 
     protected void cleanup(Context context) throws IOException, InterruptedException {
-
-        context.write(new ComKey(userName,sum), new IntWritable(sum));
+        context.write(userName, new IntWritable(sum));
 
 
     }
 }
+
 
     //context.write(new IntWritable(maxCount), popularWord);
 

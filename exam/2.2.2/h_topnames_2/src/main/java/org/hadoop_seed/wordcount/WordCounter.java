@@ -3,7 +3,6 @@ package org.hadoop_seed.wordcount;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -21,18 +20,14 @@ public class WordCounter {
             final Job job = Job.getInstance(new Configuration());
             job.setJarByClass(WordCounter.class);
             job.setJobName("Word counter");
-            job.setSortComparatorClass(MyKeySortComparator.class);
+
             job.setInputFormatClass(XmlInputFormat.class);
             FileInputFormat.addInputPath(job, new Path(args[0]));
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
-            job.setGroupingComparatorClass(MyGroupComparator.class);
             job.setMapperClass(WordCountMapper.class);
             job.setReducerClass(WordCountReducer.class);
-            job.setCombinerClass(WordCountReducer.class);
-            job.setOutputKeyClass(ComKey.class);
-            //job.setPartitionerClass(MyPartitioner.class);
+            job.setOutputKeyClass(Text.class);
             job.setOutputValueClass(IntWritable.class);
-            
             System.exit(job.waitForCompletion(true) ? 0 : 1);
         } catch (Exception e) {
             e.printStackTrace();
