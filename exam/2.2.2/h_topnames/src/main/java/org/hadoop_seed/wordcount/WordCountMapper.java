@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class WordCountMapper extends Mapper<LongWritable, Text, ComKey, NullWritable> {
+public class WordCountMapper extends Mapper<LongWritable, Text, ComKey, IntWritable> {
     //private final static IntWritable UNO = new IntWritable(1);
     private final Text word = new Text();
 
@@ -23,21 +23,19 @@ public class WordCountMapper extends Mapper<LongWritable, Text, ComKey, NullWrit
             int reputation = 0;
             String output = value.toString(); //.replaceAll("ody=\"", ""); //Removes <></>he leading tag
             Pattern pattern = Pattern.compile("isplayName=\"(.*?)\"");
-            Pattern pattern2 = Pattern.compile("Reputation=\"(.*?)\"");
+
 
 
             Matcher matcher = pattern.matcher(output);
-            Matcher matcher2 = pattern2.matcher(output);
+
             if (matcher.find()) {
                 output = matcher.group(1);
             }
-
-            if (matcher2.find()) {
-                reputation = Integer.parseInt(matcher2.group(1));
-            }
+            output = output.split(" ")[0];
 
 
-        context.write(new ComKey(output, 1), NullWritable.get());
+
+        context.write(new ComKey(output, 1), new IntWritable(1));
         }
 
     }

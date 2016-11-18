@@ -26,8 +26,8 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 
             if (matcher.find()) {
                 output = matcher.group(1);
-              //  System.out.println(output);
-                if (output.toLowerCase().contains("if")) {
+
+                if (output.toLowerCase().contains("useless")) {
                     context.write(new Text("useless"), new IntWritable(1));
                 }
             }

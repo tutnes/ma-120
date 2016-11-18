@@ -8,32 +8,42 @@ import org.apache.hadoop.mapreduce.lib.db.IntegerSplitter;
 
 import java.io.IOException;
 //import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 
-//public class WordCountReducer extends Reducer<ComKey,IntWritable,ComKey,NullWritable> {
-public class WordCountReducer extends Reducer<ComKey,NullWritable,ComKey,NullWritable> {
 
+public class WordCountReducer extends Reducer<ComKey,IntWritable,ComKey,IntWritable> {
+    String userName;
     int counter = 0;
-    protected void reduce(ComKey output, Iterable<NullWritable> values, Context context) throws IOException, InterruptedException {
+    int sum = 0;
+    //ArrayList
+    //TreeMap tmp = new TreeMap();
+    protected void reduce(Iterable<ComKey> output, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
 
-        for (NullWritable value : values) {
-            //if (counter < 10) {
-
-                counter++;
+        //for (IntWritable value : values) {
+        for (ComKey value : output) {
+            //tmp.put()
+            sum = sum + value.getreputation();
+            //context.write(new ComKey(value.getuserName(),value.getreputation()), new IntWritable(value.getreputation()));
+            //context.write(new ComKey(output.getuserName(),1), new IntWritable(1));
+            System.out.println(value.getuserName() + value.getreputation());        //counter++;
             }
-        context.write(new ComKey(output.getuserName(),counter), NullWritable.get());
+        //userName = output.getuserName();
+
         }
+
+
+
+    protected void cleanup(Context context) throws IOException, InterruptedException {
+
+        context.write(new ComKey(userName,sum), new IntWritable(sum));
+
+
     }
-
-/*    protected void cleanup(Context context) throws IOException, InterruptedException {
-        for (hello : top10map) {
-            System.out.println("Key: " + hello. + ". Value: " + output.getreputation());
-        }
-
-    }*/
+}
 
     //context.write(new IntWritable(maxCount), popularWord);
 

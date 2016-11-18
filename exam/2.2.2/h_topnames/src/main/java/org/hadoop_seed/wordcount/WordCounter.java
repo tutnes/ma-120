@@ -28,9 +28,10 @@ public class WordCounter {
             job.setGroupingComparatorClass(MyGroupComparator.class);
             job.setMapperClass(WordCountMapper.class);
             job.setReducerClass(WordCountReducer.class);
+            job.setCombinerClass(WordCountReducer.class);
             job.setOutputKeyClass(ComKey.class);
             job.setPartitionerClass(MyPartitioner.class);
-            job.setOutputValueClass(NullWritable.class);
+            job.setOutputValueClass(IntWritable.class);
             
             System.exit(job.waitForCompletion(true) ? 0 : 1);
         } catch (Exception e) {

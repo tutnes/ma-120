@@ -31,7 +31,7 @@ public class WordCountReducer extends Reducer<Text,IntWritable,Text,NullWritable
 
 
 
-        String output = key.toString() + myList.toString();
+        String output = key.toString() + myList.toString() + "\n";
         context.write(new Text(output),NullWritable.get());
     }
     }
