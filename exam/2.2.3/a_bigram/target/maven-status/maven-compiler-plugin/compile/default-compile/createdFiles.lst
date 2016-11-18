@@ -1,0 +1,6 @@
+org/hadoop_seed/wordcount/WordCountMapper$NgramIterator.class
+org/hadoop_seed/wordcount/WordCountReducer.class
+org/hadoop_seed/wordcount/WordCounter.class
+org/hadoop_seed/wordcount/XmlInputFormat.class
+org/hadoop_seed/wordcount/WordCountMapper.class
+org/hadoop_seed/wordcount/XmlRecordReader.class

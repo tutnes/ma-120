@@ -1,0 +1,5 @@
+/root/ma-120/2.2.3/a_bigram/src/main/java/org/hadoop_seed/wordcount/XmlRecordReader.java
+/root/ma-120/2.2.3/a_bigram/src/main/java/org/hadoop_seed/wordcount/WordCounter.java
+/root/ma-120/2.2.3/a_bigram/src/main/java/org/hadoop_seed/wordcount/WordCountMapper.java
+/root/ma-120/2.2.3/a_bigram/src/main/java/org/hadoop_seed/wordcount/XmlInputFormat.java
+/root/ma-120/2.2.3/a_bigram/src/main/java/org/hadoop_seed/wordcount/WordCountReducer.java
